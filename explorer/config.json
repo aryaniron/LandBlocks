@@ -1,0 +1,9 @@
+{
+  "network-configs": {
+    "artifacts-test": {
+      "name": "artifacts-test",
+      "profile": "./connection-profile/first-network_2.2.json"
+    }
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,3 @@
+Installed chaincodes on peer:
+Package ID: land_1:1dce200a7ad55249acfb16cbd4d60a236d606a07f994d991484e9158a4d4a77c, Label: land_1
+Package ID: saledeed_1:a69aef2569f94587b28394664bbeddab83d463c514653b15562870a3dd45ed1e, Label: saledeed_1

@@ -1,0 +1,29 @@
+version: "3"
+
+networks:
+  test:
+
+services:
+  api-dev:
+    build:
+      context: .
+      dockerfile: dev_image.Dockerfile
+    networks:
+      - test
+    ports:
+      - 4000:4000
+    links:
+      - mongo
+    volumes:
+      - ./src:/app/src
+    command: npm run dev
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    networks:
+      - test
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27018:27017"
