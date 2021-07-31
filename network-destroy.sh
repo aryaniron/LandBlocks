@@ -58,3 +58,6 @@ sudo rm go.sum
 
 cd ~/LandBlocksHyperLedger/api-server/src
 sudo rm -r wallets
+
+cd ~/LandBlocksHyperLedger/api-server
+sudo rm -r data

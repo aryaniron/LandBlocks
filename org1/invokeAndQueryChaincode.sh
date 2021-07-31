@@ -58,7 +58,7 @@ CC_NAME=$chaincode_name
 chaincodeInvoke() {
     setGlobalsForPeer0Org1
 
-    peer chaincode invoke -o 35.202.97.126:7050 \
+    peer chaincode invoke -o localhost:7050 \
         --ordererTLSHostnameOverride orderer.example.com \
         --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA \
         -C $CHANNEL_NAME -n ${CC_NAME} \

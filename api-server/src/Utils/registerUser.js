@@ -59,3 +59,14 @@ export const userLoginAndEnroll = async ({ OrgMSP, userId }) => {
 
   return response;
 };
+
+export const adminRegister = async () => {
+  let ccp = getCCP(2);
+  const caClient = buildCAClient(FabricCAServices, ccp, `ca.org2.example.com`);
+  const walletPath = path.join(__dirname, "..", "wallets", `wallet-org2`);
+  // setup the wallet to hold the credentials of the application user
+  const wallet = await buildWallet(Wallets, walletPath);
+
+  let response = await enrollAdmin(caClient, wallet, "Org2MSP");
+  return response;
+};

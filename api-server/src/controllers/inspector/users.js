@@ -6,7 +6,11 @@ import InspectorModal from "../../models/inspector.js";
 
 const secret = "test";
 import { getContract, getIdentity } from "../../Utils/getContract.js";
-import { registerUser, userLoginAndEnroll } from "../../Utils/registerUser.js";
+import {
+  adminRegister,
+  registerUser,
+  userLoginAndEnroll,
+} from "../../Utils/registerUser.js";
 
 export const signUp = async (req, res) => {
   try {
@@ -114,6 +118,16 @@ export const adminSignin = async (req, res) => {
         throw "Private Key is not valid";
       }
     } else throw "Not a valid X509 identity";
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+};
+
+export const adminSignUp = async (req, res) => {
+  try {
+    let response = await adminRegister();
+    res.send(response);
   } catch (error) {
     console.log(error);
     res.send(error);
